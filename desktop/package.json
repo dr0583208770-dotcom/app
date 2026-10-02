@@ -1,0 +1,49 @@
+{
+  "name": "melo-player-desktop",
+  "version": "1.0.0",
+  "description": "Melo Player — a fast offline music player for Windows 11",
+  "main": "main.js",
+  "author": "Melo Player",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable nsis --x64"
+  },
+  "dependencies": {
+    "music-metadata": "^11.10.3"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.melo.player.desktop",
+    "productName": "Melo Player",
+    "asar": true,
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        },
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "artifactName": "Melo-Player-Windows-11-${version}-${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
