@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.melo.player"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.melo.player"
